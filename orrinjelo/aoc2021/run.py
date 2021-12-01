@@ -16,6 +16,8 @@ def main():
                         help='input file')
     parser.add_argument('--input', dest='input', type=str, default=None,
                         help='input string')
+    parser.add_argument('--plot', action='store_true', default=None,
+                        help='plot, if available')
 
     args = parser.parse_args()
 
@@ -44,6 +46,9 @@ def main():
 
     print('Part 1 result:', mod.part1(input_))
     print('Part 2 result:', mod.part2(input_))
+
+    if args.plot:
+        mod.plot(input_)
 
 if __name__ == '__main__':
     main()
