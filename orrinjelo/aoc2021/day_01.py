@@ -1,8 +1,11 @@
 from orrinjelo.utils.decorators import timeit
 from orrinjelo.utils.ops import to_int_list
+from orrinjelo.aoc2021.rust.pyaoc import day01_part1, day01_part2
 
 @timeit("Day 01 Part 1")
-def part1(sweeps):
+def part1(sweeps, use_rust=True):
+    if use_rust:
+        return day01_part1(to_int_list(sweeps))
     last = None
     count = 0
     for x in to_int_list(sweeps):
@@ -12,7 +15,9 @@ def part1(sweeps):
     return count
 
 @timeit("Day 01 Part 2")
-def part2(sweeps):
+def part2(sweeps, use_rust=True):
+    if use_rust:
+        return day01_part2(to_int_list(sweeps))
     last = None
     count = 0
     sweeps = to_int_list(sweeps)
