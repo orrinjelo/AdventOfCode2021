@@ -1,9 +1,10 @@
 from orrinjelo.utils.decorators import timeit
+from orrinjelo.aoc2021.rust.pyaoc import day02_part1, day02_part2
 
 @timeit("Day 02 Part 1")
 def part1(instructions, use_rust=False):
     if use_rust:
-        return 0
+        return day02_part1(instructions)
 
     pos = (0, 0) # X, Y
 
@@ -23,7 +24,8 @@ def part1(instructions, use_rust=False):
 @timeit("Day 02 Part 2")
 def part2(instructions, use_rust=False):
     if use_rust:
-        return 0
+        return day02_part2(instructions)
+
 
     pos = (0, 0) # horiz, depth
     aim = 0

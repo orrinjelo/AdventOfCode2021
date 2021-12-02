@@ -18,6 +18,8 @@ def main():
                         help='input string')
     parser.add_argument('--plot', action='store_true', default=None,
                         help='plot, if available')
+    parser.add_argument('--rust', action='store_true', default=None,
+                        help='use rust, if available')
 
     args = parser.parse_args()
 
@@ -44,8 +46,8 @@ def main():
         print(f'{problem_number} not found.')
         sys.exit(1)
 
-    print('Part 1 result:', mod.part1(input_))
-    print('Part 2 result:', mod.part2(input_))
+    print('Part 1 result:', mod.part1(input_, use_rust=args.rust))
+    print('Part 2 result:', mod.part2(input_, use_rust=args.rust))
 
     if args.plot:
         mod.plot(input_)
